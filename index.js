@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+const express = require('express');
+const app = express();
 const {Client,GatewayIntentBits} = require('discord.js');
 const client = new Client({
     intents: [
@@ -39,4 +41,8 @@ client.on('messageCreate',async function (message) {
 });
 
 client.login(process.env.DISCORD_TOKEN);
-console.log("ChatGPT Bot is Online On Discord");
+
+
+app.listen(8999, () => {
+  console.log("ChatGPT Bot is Online On Discord");
+})
